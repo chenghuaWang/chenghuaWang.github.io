@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/06/23/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>quote-JiXianlin</title>
+    <url>/2021/06/25/quote-JiXianlin/</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+    今天仍然拼命看书，因为明天就要考了。学期的成绩就全仗这两天挣，现在更感到考试无用与无聊。
+    ——季羡林 《清华园日记》
+</blockquote>
+
+]]></content>
+      <tags>
+        <tag>quote</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux复习</title>
-    <url>/2021/06/24/Linux%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="linux期末复习"><a href="#linux期末复习" class="headerlink" title="linux期末复习"></a>linux期末复习</h1><blockquote>
+    <url>/2021/06/24/linux%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="linux期末复习"><a href="#linux期末复习" class="headerlink" title="linux期末复习"></a>linux期末复习</h1><p>本文中一些<code>$a</code>这样的shell变量引用会被mathjex翻译成公式，请分辨。</p>
+<blockquote>
 <ol>
 <li>基本的命令</li>
 <li>如何安装应用程序，快捷键等(vim，linux本身的快捷键)</li>
@@ -44,10 +76,32 @@
 <li>常用shell命令的C语言实现，比如cp, cat, ls以及pwd；</li>
 <li>多线程与进程的基本概念及接口；</li>
 </ul>
-<h2 id="Linux下的各种命令"><a href="#Linux下的各种命令" class="headerlink" title="Linux下的各种命令"></a>Linux下的各种命令</h2><p>参考word(书本和word版本的linux复习提纲)，<strong>重点注意(软链接，硬链接)，（rm，tail，head，cat，grep，cd，ls，mkdir。rmdir，pwd，ps，……），(命令之间的管道的应用)，(chmod)，(进入root)，（group用户组），man命令!!!。</strong></p>
+<h2 id="Linux下的各种命令"><a href="#Linux下的各种命令" class="headerlink" title="Linux下的各种命令"></a>Linux下的各种命令</h2><p>参考word(书本和word版本的linux复习提纲)，<strong>重点注意(软链接，硬链接)，（rm，tail，head，cat，grep，cd，ls，mkdir。rmdir，pwd，ps，……），(命令之间的管道的应用)，(chmod)，(进入root)，（group用户组），man命令，crontab命令!!!。</strong></p>
+<h3 id="1-切换用户"><a href="#1-切换用户" class="headerlink" title="1. 切换用户"></a>1. 切换用户</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">su username</span><br><span class="line">su #切换到root目录</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Group"><a href="#2-Group" class="headerlink" title="2.Group"></a>2.Group</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">groupadd 选项 用户组</span><br><span class="line">groupdel 用户组 # 删除</span><br></pre></td></tr></table></figure>
+
+<p>可以使用的选项有：</p>
+<ul>
+<li>-g GID 指定新用户组的组标识号（GID）。</li>
+<li>-o 一般与-g选项同时使用，表示新用户组的GID可以与系统已有用户组的GID相同。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd 选项 用户名 # 新增</span><br><span class="line">userdel 选项 用户名 # 删除</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>选项:<ul>
+<li>-c comment 指定一段注释性描述。</li>
+<li>-d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。</li>
+<li>-g 用户组 指定用户所属的用户组。</li>
+<li>-G 用户组，用户组 指定用户所属的附加组。</li>
+<li>-s Shell文件 指定用户的登录Shell。</li>
+<li>-u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。</li>
+</ul>
+</li>
+</ul>
 <h2 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h2><p>下面的大部分内容引用自<a href="https://www.runoob.com/linux/linux-shell.html">shell菜鸟教程</a>，很多的内容都省略了，想看完全版的去菜鸟教程，这里只是考试内容。</p>
 <h3 id="1-shell脚本基础"><a href="#1-shell脚本基础" class="headerlink" title="1.shell脚本基础"></a>1.shell脚本基础</h3><p>bash，zsh，csh ……，ubuntu内置的默认shell脚本是bash。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello World !&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello World !&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>#!</strong> 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</p>
 <h3 id="2-shell脚本的运行方式"><a href="#2-shell脚本的运行方式" class="headerlink" title="2.shell脚本的运行方式"></a>2.shell脚本的运行方式</h3><blockquote>
@@ -415,6 +469,518 @@
 <td align="left">将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
 </tr>
 </tbody></table>
+<h2 id="如何安装应用程序，快捷键等"><a href="#如何安装应用程序，快捷键等" class="headerlink" title="如何安装应用程序，快捷键等"></a>如何安装应用程序，快捷键等</h2><h3 id="1-换源"><a href="#1-换源" class="headerlink" title="1.换源"></a>1.换源</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak 备份原来的sorce文件</span><br><span class="line">sudo gedit /etc/apt/sources.list 修改sources.list文件 or sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>修改完这个文件后</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装软件"><a href="#2-安装软件" class="headerlink" title="2.安装软件"></a>2.安装软件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install [app]</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-移除软件"><a href="#3-移除软件" class="headerlink" title="3.移除软件"></a>3.移除软件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove [app]</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-apt-or-apt-get"><a href="#4-apt-or-apt-get" class="headerlink" title="4.apt or apt-get"></a>4.apt or apt-get</h3><p>apt与apt-get可以实现大部分相同的功能，可以视作两个不同的软件，但是apt-get支持更为底层的操作，其操作更细。</p>
+<h3 id="5-快捷键"><a href="#5-快捷键" class="headerlink" title="5.快捷键"></a>5.快捷键</h3><h4 id="5-1-linux-terminal"><a href="#5-1-linux-terminal" class="headerlink" title="5.1 linux, terminal"></a>5.1 linux, terminal</h4><p><code>Ctrl + Alt + T</code>打开终端。</p>
+<p><strong>Tab-自动补全</strong></p>
+<ul>
+<li>当以xxx开头的命令或文件名仅有1个时，按下Tab键 1次，将会自动补全该命令或文件名；</li>
+<li>当以xxx开头的命令或文件名不止1个时，按1次Tab键是没反应的，再按1次Tab键，下方将出现以xxx开头的命令或文件名。</li>
+</ul>
+<p><strong>在终端&amp;控制台下copy and paste：</strong></p>
+<ul>
+<li>粘贴：<code>Ctrl + Shift + c</code> 或 <code>Ctrl + Insert</code></li>
+<li>复制：<code>Ctrl + Shift + v</code> 或 <code>Shift + Insert</code></li>
+</ul>
+<p><strong>在终端中搜索内容</strong></p>
+<p>Ctrl + Shift + f</p>
+<p><strong>命令行历史</strong></p>
+<ul>
+<li>上键、<code>Ctrl + p</code>：查看上一个使用过的命令</li>
+<li>下键、<code>Ctrl + n</code>：查看下一个使用过的命令</li>
+<li><code>Ctrl + r</code>：搜索历史命令。输入若干字符，开始向上搜索包含该字符的命令，继续按Ctrl+r，搜索上一条匹配的命令</li>
+</ul>
+<p><strong>清屏</strong></p>
+<p><code>Ctrl + l</code></p>
+<p><strong>横线的数量</strong></p>
+<ul>
+<li>一横：表示参数是字符形式，如<code>ls -a</code></li>
+<li>两横：表示参数是单词形式，如<code>cp --help</code></li>
+</ul>
+<h4 id="5-2-vim"><a href="#5-2-vim" class="headerlink" title="5.2 vim"></a>5.2 vim</h4><p>移动光标：gg第一行，G最后一行，XG第X行；</p>
+<p>删除一行：dd     删除单词：dw</p>
+<p>复制一行：yy</p>
+<p>粘贴一行：p</p>
+<p><strong>退出编辑器</strong></p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th align="left">功能</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:w</td>
+<td align="left">将缓冲区写入文件，即保存修改</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>:wq</td>
+<td align="left">保存修改并退出</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>:x</td>
+<td align="left">保存修改并退出</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>:q</td>
+<td align="left">退出，如果对缓冲区进行过修改，则会提示</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>:q!</td>
+<td align="left">强制退出，放弃修改</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><strong>显示行数</strong></p>
+<p><code>:set nu</code></p>
+<p><strong>光标移动</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="center">功能</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">h,j,k,l</td>
+<td align="center">上，下，左，右</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ctrl-e</td>
+<td align="center">移动页面</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ctrl-f</td>
+<td align="center">上翻一页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ctrl-b</td>
+<td align="center">下翻一页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ctrl-u</td>
+<td align="center">上翻半页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ctrl-d</td>
+<td align="center">下翻半页</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">w</th>
+<th align="center">跳到下一个字首，按标点或单词分割</th>
+<th>接上表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">W</td>
+<td align="center">跳到下一个字首，长跳，如end-of-line被认为是一个字</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">e</td>
+<td align="center">跳到下一个字尾</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center">跳到下一个字尾，长跳</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">跳到上一个字</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center">跳到上一个字，长跳</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">跳至行首，不管有无缩进，就是跳到第0个字符</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">跳至行首的第一个字符</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">跳至行尾</td>
+<td>常用</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="center">跳至文首</td>
+<td>常用</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center">调至文尾</td>
+<td>常用</td>
+</tr>
+<tr>
+<td align="center">5gg/5G</td>
+<td align="center">调至第5行</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">gd</td>
+<td align="center">跳至当前光标所在的变量的声明处</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">fx</td>
+<td align="center">在当前行中找x字符，找到了就跳转至</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">;</td>
+<td align="center">重复上一个f命令，而不用重复的输入fx</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">查找光标所在处的单词，向下查找</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td align="center">查找光标所在处的单词，向上查找</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>删除复制</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">按esc后，然后ggvG或者ggVG</th>
+<th align="center">全选（高亮显示）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">按esc后，然后ggyG</td>
+<td align="center">全部复制</td>
+</tr>
+<tr>
+<td align="left">按esc后，然后dG</td>
+<td align="center">全部删除</td>
+</tr>
+</tbody></table>
+<h2 id="基础的-gcc-and-makefile-操作"><a href="#基础的-gcc-and-makefile-操作" class="headerlink" title="基础的 gcc and makefile 操作"></a>基础的 gcc and makefile 操作</h2><h3 id="1-gcc"><a href="#1-gcc" class="headerlink" title="1. gcc"></a>1. gcc</h3><h4 id="1-1-单文件编译"><a href="#1-1-单文件编译" class="headerlink" title="1.1 单文件编译"></a>1.1 单文件编译</h4><p><code>gcc test.c -o test</code></p>
+<h4 id="1-2-多文件编译"><a href="#1-2-多文件编译" class="headerlink" title="1.2 多文件编译"></a>1.2 多文件编译</h4><figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">gcc -c test1.c -o test1.o</span><br><span class="line">gcc -c test2.c -o test2.o</span><br><span class="line">gcc test1.o test2.o -o test</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Makefile"><a href="#2-Makefile" class="headerlink" title="2.Makefile"></a>2.Makefile</h3><p>数据结构作业中用到了makefile</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">maincc:main.o compress.o pack.o  hfman.o</span></span><br><span class="line">	g++ pack.o compress.o main.o  hfman.o -o compress_win</span><br><span class="line"><span class="section">main.o:main.cpp</span></span><br><span class="line">	g++ -c main.cpp</span><br><span class="line"><span class="section">pack.o:pack.cpp</span></span><br><span class="line">	g++ -c pack.cpp</span><br><span class="line"><span class="section">compress:compress.cpp</span></span><br><span class="line">	g++ -c compress.cpp</span><br><span class="line"><span class="section">hfman:hfman.cpp</span></span><br><span class="line">	g++ -c hfman.cpp</span><br><span class="line"></span><br><span class="line"><span class="comment">#maincc:main.o compress.o pack.o debugg.o\</span></span><br><span class="line">	g++ pack.o compress.o main.o  debugg.o -o compress_debug_co\</span><br><span class="line"><span class="section">main.o:main.cpp\</span></span><br><span class="line">	g++ -c main.cpp\</span><br><span class="line"><span class="section">pack.o:pack.cpp\</span></span><br><span class="line">	g++ -c pack.cpp\</span><br><span class="line"><span class="section">compress:compress.cpp\</span></span><br><span class="line">	g++ -c compress.cpp\</span><br><span class="line"><span class="section">debugg:debugg.cpp\</span></span><br><span class="line">	g++ -c debugg.cpp\</span><br></pre></td></tr></table></figure>
+
+<p>注意注释编写规范。</p>
+<h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><h3 id="1-进程与线程区别"><a href="#1-进程与线程区别" class="headerlink" title="1.进程与线程区别"></a>1.进程与线程区别</h3><p>引用：<a href="https://my.oschina.net/cnyinlinux/blog/422207">链接</a></p>
+<blockquote>
+<p>第一个被创造出来的进程是0号进程，这个进程在操作系统层面是不可见的，但它存在着。0号进程完成了操作系统的功能加载与初期设定，然后它创造了1号进程(init)，这个1号进程就是操作系统的“耶稣”。1号进程是上帝派来管理整个操作系统的，所以在用pstree查看进程树可知，1号进程位于树根。再之后，系统的很多管理程序都以进程身份被1号进程创造出来，还创造了与人类沟通的桥梁——shell。从那之后，人类可以跟操作系统进行交流，可以编写程序，可以执行任务。。。</p>
+</blockquote>
+<blockquote>
+<p>无论是进程还是线程，对于程序员而言，都是用来实现多任务并发的技术手段。二者都可以独立调度，因此在多任务环境下，功能上并无差异。并且二者都具有各自的实体，是系统独立管理的对象个体。所以在系统层面，都可以通过技术手段实现二者的控制。而且二者所具有的状态都非常相似。而且，在多任务程序中，子进程(子线程)的调度一般与父进程(父线程)平等竞争。</p>
+</blockquote>
+<p>进程是资源分配的基本单位，线程是调度的基本单位。</p>
+<blockquote>
+<p>这句经典名言已流传数十年，各种操作系统教材都可见此描述。确实如此，这就是二者的显著区别。读者请注意“基本”二字。相信有读者看到前半句的时候就在心里思考，“进程岂不是不能调度？”，非也！进程和线程都可以被调度，否则多进程程序该如何运行呢！</p>
+<p>只是，线程是更小的可以调度的单位，也就是说，只要达到线程的水平就可以被调度了，进程自然可以被调度。它强调的是分配资源时的对象必须是进程，不会给一个线程单独分配系统管理的资源。若要运行一个任务，想要获得资源，最起码得有进程，其他子任务可以以线程身份运行，资源共享就行了。</p>
+<p>  简而言之，进程的个体间是完全独立的，而线程间是彼此依存的。多进程环境中，任何一个进程的终止，不会影响到其他进程。而多线程环境中，父线程终止，全部子线程被迫终止(没有了资源)。而任何一个子线程终止一般不会影响其他线程，除非子线程执行了exit()系统调用。任何一个子线程执行exit()，全部线程同时灭亡。</p>
+<p>其实，也没有人写出只有线程而没有进程的程序。多线程程序中至少有一个主线程，而这个主线程其实就是有main函数的进程。它是整个程序的进程，所有线程都是它的子线程。我们通常把具有多线程的主进程称之为主线程。</p>
+</blockquote>
+<blockquote>
+<p>进程的备份关系森严，在父进程没有结束前，所有的子进程都尊从父子关系，也就是说A创建了B，则A与B是父子关系，B又创建了C，则B与C也是父子关系，A与C构成爷孙关系，也就是说C是A的孙子进程。在系统上使用pstree命令打印进程树，可以清晰看到备份关系。</p>
+<p>多线程间的关系没有那么严格，不管是父线程还是子线程创建了新的线程，都是共享父线程的资源，所以，都可以说是父线程的子线程，也就是只存在一个父线程，其余线程都是父线程的子线程。</p>
+</blockquote>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="1-chmod"><a href="#1-chmod" class="headerlink" title="1.chmod"></a>1.chmod</h3><p><img src="https://www.runoob.com/wp-content/uploads/2014/08/rwx-standard-unix-permission-bits.png" alt="chmod"></p>
+<table>
+<thead>
+<tr>
+<th align="left">#</th>
+<th align="left">权限</th>
+<th align="left">rwx</th>
+<th align="left">二进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">7</td>
+<td align="left">读 + 写 + 执行</td>
+<td align="left">rwx</td>
+<td align="left">111</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">读 + 写</td>
+<td align="left">rw-</td>
+<td align="left">110</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">读 + 执行</td>
+<td align="left">r-x</td>
+<td align="left">101</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">只读</td>
+<td align="left">r–</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">写 + 执行</td>
+<td align="left">-wx</td>
+<td align="left">011</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">只写</td>
+<td align="left">-w-</td>
+<td align="left">010</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">只执行</td>
+<td align="left">–x</td>
+<td align="left">001</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">无</td>
+<td align="left">—</td>
+<td align="left">000</td>
+</tr>
+</tbody></table>
+<h3 id="2-软连接和硬链接"><a href="#2-软连接和硬链接" class="headerlink" title="2.软连接和硬链接"></a>2.软连接和硬链接</h3><h4 id="2-1-硬链接"><a href="#2-1-硬链接" class="headerlink" title="2.1 硬链接"></a>2.1 硬链接</h4><p>硬链接是通过索引节点进行的链接。在Linux中，多个文件指向同一个索引节点是允许的，像这样的链接就是硬链接。硬链接只能在同一文件系统中的文件之间进行链接，<strong>不能对目录进行创建。</strong>如果删除硬链接对应的源文件，则硬链接文件仍然存在，而且保存了原有的内容，这样可以起到<strong>防止因为误操作而错误删除文件的作用。</strong>由于硬链接是有着相同 inode 号仅文件名不同的文件，因此，删除一个硬链接文件并不影响其他有相同 inode 号的文件。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">link oldfile newfile </span><br><span class="line">ln oldfile newfile</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-软链接"><a href="#2-2-软链接" class="headerlink" title="2.2 软链接"></a>2.2 软链接</h4><p>软链接（也叫符号链接）与硬链接不同，文件用户数据块中存放的内容是另一文件的路径名的指向。软链接就是一个普通文件，只是数据块内容有点特殊。软链接可对文件或目录创建。</p>
+<p>软链接主要应用于以下两个方面：一是方便管理，例如可以把一个复杂路径下的文件链接到一个简单路径下方便用户访问；另一方面就是解决文件系统磁盘空间不足的情况。例如某个文件文件系统空间已经用完了，但是现在必须在该文件系统下创建一个新的目录并存储大量的文件，那么可以把另一个剩余空间较多的文件系统中的目录链接到该文件系统中，这样就可以很好的解决空间不足问题。删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接就变成了死链接。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ln -s old.file soft.link</span><br><span class="line">ln -s old.dir soft.link.dir</span><br></pre></td></tr></table></figure>
+
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="1-crontab"><a href="#1-crontab" class="headerlink" title="1. crontab"></a>1. crontab</h3><p>crontab -e打开设置文件，crontab可能并没有在ubuntu上安装，使用sudo apt-get install 来安装。</p>
+<p>在crontab -e后打开的文件里修改。</p>
+<p>修改的规则如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">f1 f2 f3 f4 f5 program</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>其中 f1 是表示分钟，f2 表示小时，f3 表示一个月份中的第几日，f4 表示月份，f5 表示一个星期中的第几天。program 表示要执行的程序。</li>
+<li>当 f1 为 * 时表示每分钟都要执行 program，f2 为 * 时表示每小时都要执行程序，其馀类推</li>
+<li>当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推</li>
+<li>当 f1 为 */n 时表示每 n 分钟个时间间隔执行一次，f2 为 */n 表示每 n 小时个时间间隔执行一次，其馀类推</li>
+<li>当 f1 为 a, b, c,… 时表示第 a, b, c,… 分钟要执行，f2 为 a, b, c,… 时表示第 a, b, c…个小时要执行，其馀类推</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 6) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12) </span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">*/3 * * * * date &gt;&gt; /home/wangchenghua/hello.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-exec"><a href="#2-exec" class="headerlink" title="2.exec"></a>2.exec</h3><ul>
+<li><p>execve函数是真正意义上的系统调用</p>
+</li>
+<li><p>其他为经过包装的库函数，最终调用的还是execve函数。</p>
+</li>
+<li><p>带“l”表示以列表的形式传参数</p>
+</li>
+<li><p>带“v”表示以数组的形式传参数</p>
+</li>
+<li><p>带“e”表示将环境变量传递给函数</p>
+</li>
+<li><p>带“p”表示第一个参数filename不用输入完整的路径，只要给出命令名即可，它会在环境变量PATH中查找命令</p>
+</li>
+</ul>
+<p>该函数定义在<code>&lt;unistd.h&gt;</code></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> * argv[] = &#123;<span class="string">&quot;wensen.sh&quot;</span>, <span class="number">0</span>&#125;;  <span class="comment">// 数组最后一位需要为0</span></span><br><span class="line">    execvp(<span class="string">&quot;/home/wensen/workspace/test/wensen.sh&quot;</span>, argv);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">————————————————</span><br><span class="line">原文链接：https:<span class="comment">//blog.csdn.net/u011857683/article/details/81160059</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，执行的时候，传入的参数的第一个必须是这个被执行文件的文件名，最后的一位数组必须是0；</p>
+<p>与一般情况不同，exec函数族的函数执行成功后不会返回，因为调用进程的实体，包括代码段，数据段和堆栈等都已经被新的内容取代，只留下进程ID等一些表面上的信息仍保持原样，颇有些神似”三十六计”中的”金蝉脱壳”。看上去还是旧的躯壳，却已经注入了新的灵魂。只有调用失败了，它们才会返回一个-1，从原程序的调用点接着往下执行。 </p>
+<h3 id="3-进程"><a href="#3-进程" class="headerlink" title="3.进程"></a>3.进程</h3><p>进程由程序产生，是动态的，是一个运行着的、要占用系统运行资源的程序。简而言之，进程就是程序的一次运行过程。系统给每一个进程都分配了一个唯一的进程标识符（进程号，简称PID）。</p>
+<p><strong>进程相关的参数</strong></p>
+<blockquote>
+<p>PID：进程号（Process ID），用于唯一标识进程。</p>
+<p>PPID：父进程号（Parent PID），创建某进程的上一个进程的进程号。</p>
+<p>USER/UID：启动某个进程的用户ID和该用户所属组的ID。</p>
+<p>STAT：进程状态，颐和进程可能处于多种状态，如运行、等待、停止、睡眠、僵死等。</p>
+<p>PRIORITY：进程的优先级，数字越大表示优先级越低。</p>
+<p>NICE：进程的谦让度，表示进程对CPU时间要求的迫切程度。</p>
+<p>资源占用：包括CPU、内存等资源的占用信息。</p>
+</blockquote>
+<p><strong>进程的类型</strong></p>
+<ul>
+<li><p>交互进程：在Shell下通过执行程序所产生的进程，可在前台或后台运行。</p>
+</li>
+<li><p>批处理进程：一个进程序列。</p>
+</li>
+<li><p>守护进程：又称监控进程，是指那些在后台运行，并且没有控制终端的进程，通常可以随着操作系统的启动而运行，也可将其称为<strong>服务</strong>。</p>
+</li>
+</ul>
+<p><strong>在terminal中使用ps命令查看，也可以使用第三方的htop查看</strong></p>
+<p><strong>进程的基本状态</strong></p>
+<ol>
+<li>就绪状态</li>
+<li>执行状态</li>
+<li>阻塞状态</li>
+</ol>
+<p><strong>进程控制块</strong></p>
+<blockquote>
+<ol>
+<li>为了描述和控制进程的运行，系统为每个进程定义了一个数据结构，该数据结构被称为进程控制块PCB。</li>
+<li>PCB是进程存在的唯一标志.</li>
+</ol>
+</blockquote>
+<p><strong>进程启动</strong></p>
+<blockquote>
+<ol>
+<li>前台方式启动进程: 打开系统终端，在终端窗口的命令行提示符后输入Linux命令并按回车键，就以前台方式启动了一个进程。</li>
+<li>后台方式启动进程: 在终端下，以后台方式启动进程，需要在执行的命令后面添加一个“&amp;”符号</li>
+</ol>
+</blockquote>
+<p><strong>进程优先级改变</strong></p>
+<p>查看目前进程的优先级： <code>ps –l</code></p>
+<blockquote>
+<p>改变进程优先级的命令——<strong>nice命令</strong></p>
+<p>【功能】在<strong>启动进程时</strong>指定请求进程执行优先级</p>
+<p>【格式】nice [选项] 命令</p>
+<p>【选项】常用的一个选项是“-n”，n值即为NI的值，n值的范围为-20—19。n值越小优先级越高。即，-20代表最高的NI优先级，19代表最低的NI优先级。如果不加该选项，默认NI值为10。</p>
+<p>【说明】默认情况下，只有root用户才能提高请求进程的优先级，普通用户只能降低请求进程的优先级</p>
+</blockquote>
+<blockquote>
+<p><strong>renice命令</strong></p>
+<p>【功能】在<strong>进程执行时</strong>改变NI的值。</p>
+<p>【格式】renice [+/-n] [-g 命令名…] [-p 进程标识码…] [-u 进程所有者…]</p>
+<p>【说明】可以通过命令名、进程标识码、进程所有者名指定要改变的进程的NI值</p>
+</blockquote>
+<blockquote>
+<p><strong>kill命令</strong></p>
+<p>【功能】终止进程</p>
+<p>【格式】kill [-信号] PID</p>
+<p>【说明】kill命令用来终止进程，实际是向指定进程发送特定的信号。从而使该进程根据这个信号执行特定的动作。信号可以用信号名称，也可以使用信号码。</p>
+</blockquote>
+<blockquote>
+<p><strong>pstree命令</strong></p>
+<p>【功能】显示进程<strong>家族树的信息</strong></p>
+<p>【格式】pstree [选项] [进程PID/用户名]</p>
+</blockquote>
+<p>fork命令: 一个进程调用fork来复制自己。创建子进程后，父、子进程执行同一个程序，<strong>子进程继承父进程的资源。</strong>调用fork（）函数后，系统将创建一个与当前进程相同的新的进程。它与原有的进程具有相同的数据、连接关系和从同一处执行的连续性。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;my pid is %d\n&quot;</span>, getpid() );</span><br><span class="line">	fork();</span><br><span class="line">	fork();</span><br><span class="line">	fork();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;my pid is %d\n&quot;</span>, getpid() );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">问题：程序会有几行输出？</span><br></pre></td></tr></table></figure>
+
+<p><strong>分辨子进程还是父进程</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>	fork_rv;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Before: my pid is %d\n&quot;</span>, getpid());</span><br><span class="line">    fork_rv = fork();		<span class="comment">/* create new process  */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ( fork_rv == <span class="number">-1</span> )	<span class="comment">/* check for error	*/</span></span><br><span class="line">        perror(<span class="string">&quot;fork&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> ( fork_rv == <span class="number">0</span> )</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;I am the child.  my pid=%d\n&quot;</span>, getpid());</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;I am the parent. my child is %d\n&quot;</span>, fork_rv);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>父进程如何等待子进程的退出</strong></p>
+<blockquote>
+<p>Wait做的两件事情：</p>
+<ul>
+<li>暂停调用它的进程直到子进程结束</li>
+<li>取得子进程结束时传给exit的值</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>进程一旦调用了wait，就立即阻塞自己，由wait自动分析是否当前进程的某个子进程已经退出，如果让它找到了这样一个已经变成僵尸的子进程，wait就会收集这个子进程的信息，并把它彻底销毁后返回；如果没有找到这样一个子进程，wait就会一直阻塞在这里，直到有一个出现为止。</p>
+</blockquote>
+<p><strong>僵尸进程</strong></p>
+<blockquote>
+<p>注意：在一个进程调用了exit之后，该进程并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有任何内存空间。</p>
+</blockquote>
+<p><strong>如何结束僵尸进程？</strong></p>
+<blockquote>
+<ul>
+<li>父进程中使用wait函数，收尸。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>把父进程杀掉。父进程死后，僵尸进程成为”孤儿进程”，过继给1号进程init，init始终会负责清理僵尸进程．它产生的所有僵尸进程也跟着消失.</li>
+</ul>
+</blockquote>
+<p><strong>wait()</strong></p>
+<blockquote>
+<p>进程一旦调用了wait，就立即阻塞自己，由wait自动分析是否当前进程的某个子进程已经退出，如果让它找到了这样一个已经变成僵尸的子进程，wait就会收集这个子进程的信息，并把它彻底销毁后返回；如果没有找到这样一个子进程，wait就会一直阻塞在这里，直到有一个出现为止。</p>
+</blockquote>
+<blockquote>
+<p>参数status用来保存被收集进程退出时的一些状态，它是一个指向int类型的指针。但如果我们对这个子进程是如何死掉的毫不在意，只想把这个僵尸进程消灭掉，（事实上绝大多数情况下，我们都会这样想），我们就可以设定这个参数为NULL，就象下面这样：pid = wait(NULL);  <strong>如果成功，wait会返回被收集的子进程的进程ID，如果调用进程没有子进程，调用就会失败，此时wait返回-1</strong></p>
+</blockquote>
+<h3 id="4-线程-重点"><a href="#4-线程-重点" class="headerlink" title="4.线程(重点)"></a>4.线程(重点)</h3><p>线程是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。</p>
+<p>（1）线程采用了多个线程<strong>可共享资源</strong>的设计思想。在多进程情况下，每个进程都有自己独立的地址空间，在多线程情况下，同一进程内的线程共享进程的地址空间。线程和进程的最大区别在于<strong>线程完全共享相同的地址空间，运行在同一地址上</strong>。</p>
+<p>（2）由于进程地址空间独立而线程共享地址空间，所以从一个线程切换到另一线程所花费的代价比进程低。</p>
+<p>（3）进程本身的信息在内存中占用的空间比线程大。因此，<strong>线程更能充分地利用内存</strong>。线程可以看作是在进程内部执行的指定序列。</p>
+<p>（4）线程间的通信比进程间的通信更加方便和省时。进程间的数据空间相互独立，彼此通信要以专门的通信方式进行，通信时必须经过操作系统，而同一进程的多个线程共享数据空间，<strong>一个线程的数据可以直接提供给其他线程使用，不必进过操作系统。</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pthread_create</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="keyword">pthread_t</span> *<span class="keyword">restrict</span> tidp,   <span class="comment">//新创建的线程ID指向的内存单元。</span></span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="keyword">const</span> <span class="keyword">pthread_attr_t</span> *<span class="keyword">restrict</span> attr,  <span class="comment">//线程属性，默认为NULL</span></span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="keyword">void</span> *(*start_rtn)(<span class="keyword">void</span> *), <span class="comment">//新创建的线程从start_rtn函数的地址开始运行</span></span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="keyword">void</span> *<span class="keyword">restrict</span> arg <span class="comment">//默认为NULL。若上述函数需要参数，将参数放入结构中并将地址作为arg传入。</span></span></span></span><br><span class="line"><span class="params"><span class="function">                  )</span></span>;</span><br><span class="line">————————————————</span><br><span class="line">原文链接：https:<span class="comment">//blog.csdn.net/wushuomin/article/details/80051295</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span>  <span class="meta-string">&lt;pthread.h&gt;</span> <span class="comment">// vital</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>  <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#icnlude  <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_msg</span><span class="params">(<span class="keyword">char</span> *m)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span> ; i&lt;NUM ; i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, m);</span><br><span class="line">		fflush(<span class="built_in">stdout</span>);</span><br><span class="line">		sleep(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">pthread_t</span> t1, t2;		<span class="comment">/* two threads */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span>	*<span class="title">print_msg</span><span class="params">(<span class="keyword">void</span> *)</span></span>;</span><br><span class="line"></span><br><span class="line">	pthread_create(&amp;t1, <span class="literal">NULL</span>, print_msg, (<span class="keyword">void</span> *)<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">	pthread_create(&amp;t2, <span class="literal">NULL</span>, print_msg, (<span class="keyword">void</span> *)<span class="string">&quot;world\n&quot;</span>);</span><br><span class="line">	pthread_join(t1, <span class="literal">NULL</span>);</span><br><span class="line">	pthread_join(t2, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>pthread_join使得调用线程挂起直至有thread参数指定的线程终止。</p>
+<p>多个线程在一个单独的进程中运行，共享全局变量，因此线程间可以通过设置和读取全局变量来进行通信。</p>
+<p>对共享内存的访问是线程的一个既有用又极其危险的特性</p>
+</blockquote>
+<p><strong>pthread_mutex_lock</strong></p>
+<p><strong>pthread_mutex_unlock</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">pthread_mutex_t</span> counter_lock = PTHREAD_MUTEX_INITIALIZER;</span><br><span class="line"></span><br><span class="line">pthread_mutex_lock(&amp;counter_lock);</span><br><span class="line">total_words++;</span><br><span class="line">pthread_mutex_unlock(&amp;counter_lock);</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-pwd"><a href="#5-pwd" class="headerlink" title="5.pwd"></a>5.pwd</h3><p>1、如何判断是否到达目录树的顶点？</p>
+<p>在unix文件系统的根目录中“.”和“..”指向同一个i-节点时，就以认为到达树的顶端。</p>
+<p>2、如何正确显示目录名？</p>
+<p>递归地调用并显示，或者使用栈数据结构；</p>
+<p><strong>命令pwd的实现流程</strong></p>
+<ol>
+<li>得到”.”的i-节点号，称其为n(使用stat)；</li>
+<li>chdir ..，切换到上一级目录( 使用chdir)；</li>
+<li>找到i-节点号n所对应的链接名称(使用opendir, readdir, closedir），重复直到树的顶端；</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIZE 128</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">ino_t</span> <span class="title">get_inode</span><span class="params">(<span class="keyword">char</span> *dirname)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_work_dir</span><span class="params">(<span class="keyword">ino_t</span> inode_num)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inode_to_dirname</span><span class="params">(<span class="keyword">ino_t</span> inode_num, <span class="keyword">char</span> *buf, <span class="keyword">int</span> buflen)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    get_work_dir(get_inode(<span class="string">&quot;.&quot;</span>));   </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">ino_t</span> <span class="title">get_inode</span><span class="params">(<span class="keyword">char</span> *dirname)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">info</span>;</span></span><br><span class="line">    <span class="keyword">if</span> (stat(dirname, &amp;info) == <span class="number">-1</span>)&#123;</span><br><span class="line">        perror(<span class="string">&quot;dirname&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> info.st_ino;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_work_dir</span><span class="params">(<span class="keyword">ino_t</span> inode_num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">ino_t</span> parent_inode;</span><br><span class="line">    <span class="keyword">char</span> buf[SIZE];</span><br><span class="line">    <span class="keyword">if</span> (get_inode(<span class="string">&quot;..&quot;</span>) != inode_num)&#123;</span><br><span class="line">        chdir(<span class="string">&quot;..&quot;</span>);</span><br><span class="line">        inode_to_dirname(inode_num, buf, SIZE);</span><br><span class="line">        parent_inode = get_inode(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">        get_work_dir(parent_inode);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;/%s&quot;</span>, buf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inode_to_dirname</span><span class="params">(<span class="keyword">ino_t</span> inode_num, <span class="keyword">char</span> *buf,<span class="keyword">int</span> buflen)</span></span>&#123;</span><br><span class="line">    DIR *dir_ptr;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> *<span class="title">dire</span>;</span></span><br><span class="line">    <span class="keyword">if</span> ((dir_ptr = opendir(<span class="string">&quot;.&quot;</span>)) == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        perror(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> ((dire = readdir(dir_ptr)) != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> (dire-&gt;d_ino == inode_num)&#123;</span><br><span class="line">            <span class="built_in">strncpy</span>(buf, dire-&gt;d_name, buflen);</span><br><span class="line">            buf[<span class="built_in">strlen</span>(buf)] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">            closedir(dir_ptr);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;error looking for inode number %d\n&quot;</span>, (<span class="keyword">int</span>)inode_num);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-ls"><a href="#6-ls" class="headerlink" title="6.ls"></a>6.ls</h3><p>在Linux中文件和目录都被组织目录树，每个节点或者是文件或者是目录，U盘等也是挂载到某个特定的目录，所以ls只要考虑这两种情况，不需要去考虑分区。</p>
+<p>目录是一种特殊的文件。</p>
+<ol>
+<li>打开当前目录的对应的dirp文件；</li>
+</ol>
+<p>  <code>DIR* dir_ptr = opendir(&quot;.&quot;);</code></p>
+<ol start="2">
+<li>读取当前目录的dir_ptr结构中的文件名，并打印；</li>
+</ol>
+<p>  <code>direntp = readdir(dir_ptr)</code></p>
+<p>  <code>printf(&quot;%s\n&quot;, direntrp-&gt;name);</code></p>
+<ol start="3">
+<li>最后关闭打开的dirp文件；</li>
+</ol>
+<p><strong>问题</strong></p>
+<blockquote>
+<p>1、怎么样把mode：100644转化为”-rw-r–r–”？</p>
+<p>2、user: 1000怎么样转化为tfzhang？</p>
+<p>3、group: 1000怎么样转化为tfzhang？</p>
+<p>4、变换modtime？</p>
+</blockquote>
+<p><strong>与操作提取数字位</strong></p>
+<blockquote>
+<p>通过每位与操作，将每组的rwx位提取出来；比如要提取右起第3位，只要将数值100644与4这个数进行与操作；</p>
+</blockquote>
+<h3 id="7-cat"><a href="#7-cat" class="headerlink" title="7.cat"></a>7.cat</h3><p>复习不完了，:cry: .</p>
+<p>考完了，还算顺利，注意下各种函数的参数位置，着重复习线程与进程还有pwd，cat，ls的实现，没了，挂不了。</p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -423,23 +989,5 @@
         <tag>Linux</tag>
         <tag>期末复习</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/06/23/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
