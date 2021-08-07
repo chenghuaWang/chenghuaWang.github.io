@@ -971,4 +971,25 @@
         <tag>期末复习</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Align Deep Features for Oriented Object Detection (Notes)(to be continued)</title>
+    <url>/2021/08/07/S2A-Net/</url>
+    <content><![CDATA[<h1 id="Align-Deep-Features-for-Oriented-Object-Detection-Notes-to-be-continued"><a href="#Align-Deep-Features-for-Oriented-Object-Detection-Notes-to-be-continued" class="headerlink" title="Align Deep Features for Oriented Object Detection (Notes)(to be continued)"></a>Align Deep Features for Oriented Object Detection (Notes)(to be continued)</h1><h2 id="0-Basic-Concept"><a href="#0-Basic-Concept" class="headerlink" title="0. Basic Concept"></a>0. Basic Concept</h2><h2 id="1-Intro"><a href="#1-Intro" class="headerlink" title="1.Intro"></a>1.Intro</h2><h2 id="2-Related-Works"><a href="#2-Related-Works" class="headerlink" title="2. Related Works"></a>2. Related Works</h2><h2 id="3-Prob-solved"><a href="#3-Prob-solved" class="headerlink" title="3. Prob solved"></a>3. Prob solved</h2><h3 id="3-1-severe-misalignment-in-one-stage-detectors"><a href="#3-1-severe-misalignment-in-one-stage-detectors" class="headerlink" title="3.1 severe misalignment in one-stage detectors"></a>3.1 severe misalignment in one-stage detectors</h3><ol>
+<li>以往的使用多个试探性的anchors的方法准确度在一些特定的情况下较低，例如： “桥” 这个实列，aspect ratio在1/30 左右，如果使用试探性的anchor，那么这几个anchors很有可能根本没有将桥包围在其中，或者只有很少的anchor将其包围在其中，因此，在之后的regress的过程中，acc会变得很低。同时，这种类似的情况下，大部分的anchors内部的实列的占比远小于外部的环境，这些由前后背景不平衡带来的影响，会有误差累积，会影响整个算法的performance.</li>
+<li>标准的卷积操作得到的感受野是相对固定的，而且一般来说是axis-alignded。但是在遥感的图像中，各种实列分散并且有不同的角度，或者一些实列非常靠近、紧凑，且相同类别的实列也有不同的外观。因此，尽管anchor box对于某一个实列有着很高的置信度，卷积得到的特征和anchor box之间还是有很多的不对齐的。结果，分类的准确度很难反映出标定框的准确度，，这个也阻碍了之后post-processing阶段的表现。(e.g., non-maximum suppression(NMS))</li>
+</ol>
+<p>为了解决这些单阶段遥感图像目标检测中普遍出现的问题。作者提出了一个新的算法，名为：<em>Single-Shot Alignment Network</em> $(S^{2}A-Net)$，这个算法包含了两个模块：1. Feature Alignment Module(FAM) 2. Oriented Detection Module(ODM)。其中 FAM 使用 Anchor Refinement Network(ARN) 来获得高质量的anchors， 然后使用Alignment Convolution(AlignConv)来自适应的让特征 anchors 去和GT的边界对齐。</p>
+<h2 id="4-proposed-method"><a href="#4-proposed-method" class="headerlink" title="4. proposed method"></a>4. proposed method</h2><h3 id="4-1-RetinaNet-as-Baseline"><a href="#4-1-RetinaNet-as-Baseline" class="headerlink" title="4.1 RetinaNet as Baseline"></a>4.1 RetinaNet as Baseline</h3><p>作者在文章中使用了一个单阶段的检测器 RetinaNet 来作为比较器。RetinaNet包含了1个 backbone network(特征金字塔，Feature pyramid network，FPN) 和 2个 task-specific subnetworks(fully convolutional networks  with several stacked convolution layers)来进行分类和回归。并且使用Focal Loss来缓解前后背景样本不平衡带来的问题。</p>
+<img src="./imgs/two types bounding box.png" alt="two types bounding box" style="zoom:50%;" />
+
+<p>作者对RetinaNet最终回归的输出做了一些小改动，RetinaNet 最终会输出如下的oriented bounding box参数，其中$\theta$定义参见上图<br>$$<br>{(X,w,h,\theta)}(其中\theta \in [-\frac{\pi}{4},\frac{3\pi}{4}])<br>$$<br>其他的参数设定都按照原来的RetinaNet中的设置来。</p>
+<h3 id="4-2-Alignment-Convolution"><a href="#4-2-Alignment-Convolution" class="headerlink" title="4.2 Alignment Convolution"></a>4.2 Alignment Convolution</h3><h2 id="5-reference"><a href="#5-reference" class="headerlink" title="5. reference"></a>5. reference</h2>]]></content>
+      <categories>
+        <category>Computer Vision</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+        <tag>Notes-Papers</tag>
+      </tags>
+  </entry>
 </search>
