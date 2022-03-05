@@ -1272,7 +1272,7 @@
 
 <p><strong>8 x 8 分块最优性能探讨</strong></p>
 <p>为了探讨最优性能，我再理一遍 cache 的运行过程。在 A，B两个矩阵中，cache set 是这样被分配的。</p>
-<p>$$<br>\begin{array}{l}0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\4&amp;4&amp;4&amp;4&amp;4&amp;4&amp;4&amp;4\8&amp;8&amp;8&amp;8&amp;8&amp;8&amp;8&amp;8\12&amp;12&amp;12&amp;12&amp;12&amp;12&amp;12&amp;12\16&amp;16&amp;16&amp;16&amp;16&amp;16&amp;16&amp;16\20&amp;20&amp;20&amp;20&amp;20&amp;20&amp;20&amp;20\24&amp;24&amp;24&amp;24&amp;24&amp;24&amp;24&amp;24\28&amp;28&amp;28&amp;28&amp;28&amp;28&amp;28&amp;28 \end{array}<br>$$</p>
+<p>$$<br>\begin{array}{l}<br>0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0 \newline<br>4&amp;4&amp;4&amp;4&amp;4&amp;4&amp;4&amp;4 \newline<br>8&amp;8&amp;8&amp;8&amp;8&amp;8&amp;8&amp;8\newline<br>12&amp;12&amp;12&amp;12&amp;12&amp;12&amp;12&amp;12\newline<br>16&amp;16&amp;16&amp;16&amp;16&amp;16&amp;16&amp;16\newline<br>20&amp;20&amp;20&amp;20&amp;20&amp;20&amp;20&amp;20\newline<br>24&amp;24&amp;24&amp;24&amp;24&amp;24&amp;24&amp;24\newline<br>28&amp;28&amp;28&amp;28&amp;28&amp;28&amp;28&amp;28\newline<br>\end{array}<br>$$</p>
 <p>这个 8x8 的矩阵表示的就是 第一个分块矩阵的 set 的位置。我们以这个小的矩阵为例，解释原始方法和上文中的 8x8 方法为什么有大量的 cache miss。</p>
 <p>当我们使用原始方法的时候，我们首先访问的是A[0][0]，这会造成一次 cold miss，然后写入 B[0][0]， 又会造成一次 conflict miss，接下来访问A[0][1]，会造成一次 conflict miss，在写入 B[1][0] 会造成一次 cold miss，我们可以发现有大量的 miss 被用在 A，B 矩阵的转换的过程中了。</p>
 <p>那么再看 8x8 的矩阵的情况。8x8 的矩阵就是为了防止 A，B之间大量的冲突。可以发现在 8x8 的矩阵中，除了对角线，其他A，B中相对应的元素都是在不同的 set 中的。这样可以减少大量的 conflict miss。每个小块中，先按照行读A，再按照列写B，在这样的情况下，每个A的8x8 的块中只有第一列会出现 cold miss，每个B的 8x8 的块中只有第一列会出现 cold miss，但是 B的对角线上会出现 conflict miss，那么我们可以估计出总的 miss 数量应该是 在A中有 16 x 8 = 128 misses，在B中有 16 x 8 + 28(对角线) = 156 misses，那么如果能够消除对角线上的 conflict miss，我们就可以得到 总计 256 次 misses 的最优性能。</p>
